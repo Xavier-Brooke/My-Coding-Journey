@@ -26,6 +26,16 @@ app.get("/ig/:user", (req, res) => {
     return res.render("error.ejs") ;
 })
 
+app.post("/ig/:user/follow", (req, res) => {
+    let { user } = req.params ;
+    let userData = igData[user] ;
+    if(userData) {
+        userData.followers += 1 ;
+        return res.redirect(`/ig/${user}`) ;
+    }
+    res.send("something went wrong..").status(404) ;
+})
+
 app.get(/.*/, (req, res) => {
     res.status(404).send("Page not found!") ;
 })

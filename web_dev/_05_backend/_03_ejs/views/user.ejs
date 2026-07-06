@@ -10,8 +10,10 @@
     <h1>Welcome <i>@<%= userData.name %></i></h1>
     <h4>
         <span>Followers :- <%= userData.followers %></span>
-        &emsp;&emsp;
+        &emsp;
         <span>Following :- <%= userData.following %></span>
+        &nbsp;&nbsp;
+        <form method="post" action="/ig/<%= userData.name %>/follow" style="display: inline;"><button>Follow</button></form>
     </h4>
     <% for(let post of userData.posts) {%>
         <div class="postDiv">
