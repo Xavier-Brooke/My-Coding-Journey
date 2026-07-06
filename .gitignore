@@ -1,2 +1,8 @@
+### web_dev ###
 node_modules/
 package-lock.json
+
+### DSA ###
+.idea/
+*.iml
+DSA/*.gitignore
