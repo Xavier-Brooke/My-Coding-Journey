@@ -1,6 +1,7 @@
 ### web_dev ###
 node_modules/
 package-lock.json
+assets/
 
 ### DSA ###
 .idea/
