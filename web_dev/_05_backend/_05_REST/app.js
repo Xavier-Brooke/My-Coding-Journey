@@ -15,6 +15,10 @@ app.get("/filmyWorld", (req, res) => {
     res.render("home.ejs", {data}) ;
 })
 
+app.get("/filmyWorld/new", (req, res) => {
+    res.render("newPost.ejs") ;
+})
+
 app.listen(port, () => {
     console.log(`App is listening at port ${port}`) ;
 })
