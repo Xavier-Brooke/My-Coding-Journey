@@ -145,8 +145,31 @@
 // let arr = [1, 2, 3, -3, 4, -87, 834, -7, 0] ;
 // console.log(getMin(arr)) ;
 
-let name = ["bob", "adam", "catlyn", "donald", "casey", "xavier"] ;
-let [winner, looser, ...others] = name ;
-console.log(winner) ;
-console.log(looser) ;
-console.log(others) ;
+// let name = ["bob", "adam", "catlyn", "donald", "casey", "xavier"] ;
+// let [winner, looser, ...others] = name ;
+// console.log(winner) ;
+// console.log(looser) ;
+// console.log(others) ;
+
+let studentInfo = {
+    name : "Adam",
+    class : "XII",
+    age : 17,
+    subjects : ["Mathematics", "Physics", "Chemistry", "English"] ,
+    username : "adam123",
+    password : "adam@123"
+}
+
+let { name, username, password, subjects}  = studentInfo ;
+console.log(name) ;
+console.log(username) ;
+console.log(password) ;
+console.log(subjects) ;
+
+let arr = [1, 2] ;
+arr.push({name : name, username, password, subjects}) ;
+console.log(arr) ;
+
+let { username : user, password : pass} = studentInfo ;
+console.log(user) ;
+console.log(pass) ;
