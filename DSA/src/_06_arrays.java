@@ -189,10 +189,41 @@ public class _06_arrays {
         return maxSum ;
     }
 
+    /*
+    * Question 11 :-
+    * WAF to rotate an array about a pivot point
+    * Time Complexity :- O(), Space Complexity :- O()*/
+    public static void reverseArr(int[] arr, int si, int ei) {
+        while(si <= ei) {
+            int temp = arr[si] ;
+            arr[si] = arr[ei] ;
+            arr[ei] = temp ;
+            si++ ;
+            ei-- ;
+        }
+    }
+
+    public static void rotateArr(int[] arr, int d) {
+        int n = arr.length ;
+        d %= n ;
+        reverseArr(arr, 0, d-1);
+        reverseArr(arr, d, n-1);
+        reverseArr(arr, 0, n-1);
+    }
+
     /* 2D Arrays */
 
     // main function
     public static void main(String[] args) {
+
+        // Test Case for Question 11 :-
+//        int[] arr = {1, 2, 3, 4, 5} ;
+//        int d = 2 ;
+//        System.out.println("Array before rotation :- ");
+//        printArr(arr);
+//        rotateArr(arr, 2);
+//        System.out.println("\nArray after rotation :- ");
+//        printArr(arr);
 
         // Test Case for Questin 10 :-
 //        int[] arr = {1, -2, 6, -1, 3} ;
