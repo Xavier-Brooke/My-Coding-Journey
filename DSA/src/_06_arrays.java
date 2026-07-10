@@ -192,7 +192,7 @@ public class _06_arrays {
     /*
     * Question 11 :-
     * WAF to rotate an array about a pivot point
-    * Time Complexity :- O(), Space Complexity :- O()*/
+    * Time Complexity :- O(n), Space Complexity :- O(1)*/
     public static void reverseArr(int[] arr, int si, int ei) {
         while(si <= ei) {
             int temp = arr[si] ;
@@ -211,10 +211,74 @@ public class _06_arrays {
         reverseArr(arr, 0, n-1);
     }
 
+    /*
+    * Question 12 :-
+    * Trapping Rain water
+    * Time Complexity :- O(n), Space Complexity :- O(n)*/
+    public static int trappingRainWater(int[] heights) {
+        int n = heights.length ;
+        int trappedWater = 0 ;
+
+        int[] rightMax = new int[n] ;
+        int[] leftMax = new int[n] ;
+
+        leftMax[0] = heights[0] ;
+        for(int i = 1; i < n; i++) {
+            if(heights[i] > leftMax[i-1]) {
+                leftMax[i] = heights[i] ;
+            } else {
+                leftMax[i] = leftMax[i-1] ;
+            }
+        }
+
+        rightMax[n-1] = heights[n-1] ;
+        for(int i = (n-2); i >= 0; i--) {
+            if(heights[i] > rightMax[i+1]) {
+                rightMax[i] = heights[i] ;
+            } else {
+                rightMax[i] = rightMax[i+1] ;
+            }
+        }
+
+        for(int i = 0; i < n; i++) {
+            int waterLevel = Math.min(rightMax[i], leftMax[i]) ;
+            trappedWater += (waterLevel - heights[i]) ;
+        }
+        return trappedWater ;
+    }
+
+    /*
+    * Question 13 :-
+    * Stock Buy and Sell problem
+    * Time Complexity :- O(n), Space Complexity :- O(1)*/
+    public static int stockBuyAndSell(int[] prices) {
+        int maxProfit = 0 ;
+        int buyingPrice = prices[0] ;
+        for(int i = 1; i < prices.length; i++) {
+            if(buyingPrice < prices[i]) {
+                int currProfit = prices[i] - buyingPrice ;
+                maxProfit = Math.max(currProfit, maxProfit) ;
+
+            } else {
+                buyingPrice = prices[i] ;
+            }
+        }
+        return maxProfit ;
+    }
+
     /* 2D Arrays */
 
     // main function
     public static void main(String[] args) {
+
+        /* 1D Arrays*/
+        // Test Case for Question 13 :-
+//        int[] prices = {7, 1, 5, 3, 6, 4} ;
+//        System.out.println(stockBuyAndSell(prices));
+
+        // Test Case for Question 12 :-
+//        int[] heights = {4, 2, 0, 6, 3, 2, 5} ;
+//        System.out.println(trappingRainWater(heights));
 
         // Test Case for Question 11 :-
 //        int[] arr = {1, 2, 3, 4, 5} ;
