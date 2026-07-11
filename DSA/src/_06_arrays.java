@@ -268,8 +268,105 @@ public class _06_arrays {
 
     /* 2D Arrays */
 
+    /*
+    * Question 1 :-
+    * WAF to apply concept of linear search on 2D matrices
+    * Time Complexity :- O(m*n), Space Complexity :- O(1)*/
+    public static void linearSearch_2D_matrices(int[][] matrix, int key) {
+        for(int i =  0; i < matrix.length; i++) {
+            for(int j = 0; j < matrix[i].length; j++) {
+                if(matrix[i][j] == key) {
+                    System.out.println(key + " is present in matrix, at (" + i + "," + j + ")") ;
+                    return ;
+                }
+            }
+        }
+        System.out.println(key + " is not present in matrix") ;
+        return ;
+    }
+
+    /*
+    * Question 2 :-
+    * WAF to print matrix in spiral way
+    * Time Complexity :- O(m*n), Space Complexity :- O()*/
+    public static void spiralMatrix(int[][] matrix) {
+        int sr = 0 ; // Starting row
+        int er = matrix.length-1 ; // ending row
+        int sc = 0 ; // starting column
+        int ec = matrix[0].length-1 ; // ending column
+
+        while((sc <= ec) && (sr <= er)) {
+            // horizontally towards right
+            for(int p = sc; p <= ec; p++) {
+                System.out.print(matrix[sr][p] + " ") ;
+            }
+            // vertically towards bottom
+            for(int q = (sr+1); q <= er; q++) {
+                System.out.print(matrix[q][ec] + " ");
+            }
+            // horizontally towards left
+            if(sr < er) {
+                for(int r = (ec-1); r >= sc; r--) {
+                    System.out.print(matrix[er][r] + " ");
+                }
+            }
+            // vertically towards up
+            if(sc < ec) {
+                for(int s = (er-1); s >= (sr+1); s--) {
+                    System.out.print(matrix[s][sc] + " ");
+                }
+            }
+            sr++ ;
+            sc++ ;
+            er-- ;
+            ec-- ;
+        }
+    }
+
+    /*
+    * Question 3 :-
+    * WAF to calculate diagonal sum of a given matrix
+    * Time Complexity :- O(n), Space Complexity :- O(1)*/
+    public static int diagonalSum(int[][] matrix) {
+        int sum = 0 ;
+        for(int i = 0; i < matrix.length; i++) {
+            sum += matrix[i][i] ;
+            if(i != (matrix.length-1-i)) {
+                sum += matrix[i][matrix.length-1-i] ;
+            }
+        }
+        return sum ;
+    }
+
+    /*
+    * Question 4 :-
+    * Search in sorted array problem
+    * Time Complexity :- O(), Space Complexity :- O()*/
+
+
     // main function
     public static void main(String[] args) {
+
+        /* 2D Arrays */
+
+        // Test Case for Question 3 :-
+//        int[][] matrix1 = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}} ;
+//        System.out.println(diagonalSum(matrix1));
+//        int[][] matrix2 = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}} ;
+//        System.out.println(diagonalSum(matrix2));
+
+        // Test Case for Question 2 :-
+//        int[][] matrix1 = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}} ;
+//        spiralMatrix(matrix1);
+//        int[][] matrix2 = {{1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}} ;
+//        spiralMatrix(matrix2);
+//        int[][] matrix3 = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}} ;
+//        spiralMatrix(matrix3);
+
+        // Test Case for Question 1 :-
+//        int[][] matrix = {{1, 2, 3, 4, 5}, {6, 7}, {8, 9, 10}} ;
+//        int key = 7 ;
+//        linearSearch_2D_matrices(matrix, key);
 
         /* 1D Arrays*/
         // Test Case for Question 13 :-
