@@ -341,13 +341,31 @@ public class _06_arrays {
     /*
     * Question 4 :-
     * Search in sorted array problem
-    * Time Complexity :- O(), Space Complexity :- O()*/
+    * Time Complexity :- O(m+n), Space Complexity :- O(1)*/
+    public static boolean staircaseSearch(int[][] matrix, int key) {
+        int row = 0 ;
+        int col = matrix[0].length-1 ;
+        while(row < matrix.length && col >= 0) {
+            if(matrix[row][col] == key) {
+                return true ;
+            } else if(key < matrix[row][col]) {
+                col-- ;
+            } else {
+                row++ ;
+            }
+        }
+        return false ;
+    }
 
 
     // main function
     public static void main(String[] args) {
 
         /* 2D Arrays */
+
+        // Test Case for Question 4 :-
+//        int[][] matrix = {{10, 20, 30, 40}, {15, 25, 35, 45}, {27, 29, 37, 48}, {32, 33, 39, 50}} ;
+//        System.out.println(staircaseSearch(matrix, 33));
 
         // Test Case for Question 3 :-
 //        int[][] matrix1 = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}} ;
