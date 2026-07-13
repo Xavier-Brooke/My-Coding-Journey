@@ -357,11 +357,58 @@ public class _06_arrays {
         return false ;
     }
 
+    /*
+    * Question 5 :-
+    * WAF to print matrix in column wise
+    * Time Complexity :- O(m*n), Space Complexity :- O(1)*/
+    public static void print_matrix_columnWise(int[][] matrix) {
+        for(int i = 0; i < matrix[0].length; i++) {
+            for(int j = 0; j < matrix.length; j++) {
+                System.out.print(matrix[j][i] + " ") ;
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+
+    /*
+    * Question 6 :-
+    * WAF to reverse every row of a matrix
+    * Time Complexity :- O(n*m), Space Complexity :- O(1)*/
+    public static void reverseRow(int[][] matrix) {
+        for(int i = 0; i < matrix.length; i++) {
+            int si = 0 ;
+            int ei = matrix[i].length-1 ;
+            while(si < ei) {
+                int temp = matrix[i][si] ;
+                matrix[i][si] = matrix[i][ei] ;
+                matrix[i][ei] = temp ;
+                si++ ;
+                ei-- ;
+            }
+        }
+    }
 
     // main function
     public static void main(String[] args) {
 
         /* 2D Arrays */
+
+        // Test Case for Question 6 :-
+//        int[][] matrix = {{1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}, {11, 12, 13, 14, 15}} ;
+//        reverseRow(matrix);
+//        for(int[] arr : matrix) {
+//            for(int ele : arr) {
+//                System.out.print(ele + " ");
+//            }
+//            System.out.println();
+//        }
+
+        // Test Case for Question 5 :-
+//        int[][] matrix = {{1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}, {11, 12, 13, 14, 15}} ;
+//        print_matrix_columnWise(matrix);
+//        int[][] matrix1 = {{1, 2, 3, 4}, {5, 6, 7, 8}} ;
+//        print_matrix_columnWise(matrix1);
 
         // Test Case for Question 4 :-
 //        int[][] matrix = {{10, 20, 30, 40}, {15, 25, 35, 45}, {27, 29, 37, 48}, {32, 33, 39, 50}} ;
