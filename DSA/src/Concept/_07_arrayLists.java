@@ -1,5 +1,6 @@
+package Concept;
+
 import java.util.ArrayList ;
-import java.util.Collections ;
 
 public class _07_arrayLists {
 
@@ -81,6 +82,7 @@ public class _07_arrayLists {
 //        print_multiDimensional_ArrayList(mainList);
 
         /* 1D ArrayList */
+        //
 //        ArrayList<Integer> list = new ArrayList<>() ;
 //        list.add(1); list.add(20) ; list.add(-3) ; list.add(4) ; list.add(-5) ;
 
