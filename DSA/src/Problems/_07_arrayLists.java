@@ -1,6 +1,7 @@
 package Problems;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections ;
 
 public class _07_arrayLists {
@@ -50,8 +51,53 @@ public class _07_arrayLists {
         return false ;
     }
 
+    /*
+    * Problem 3 :-
+    * Adding 1 to the ArrayList
+    * Time Complexity :- O(), Space Complexity :- O()*/
+    public static void addOne(int[] arr) {
+
+        ArrayList<Integer> list = new ArrayList<>() ;
+        for(int ele : arr) {
+            list.add(ele) ;
+        }
+
+        int curr = list.size()-1 ;
+        int currEle = list.get(curr) ;
+
+        if(currEle < 9) {
+            list.set(curr, (currEle + 1)) ;
+        } else {
+            while(currEle >= 9 && curr > 0) {
+                list.set(curr, 0) ;
+                curr-- ;
+                currEle = list.get(curr) ;
+                list.set(curr, (currEle+1)) ;
+            }
+        }
+
+        if(list.getFirst() > 9) {
+            list.removeFirst() ;
+            list.addFirst(0); ;
+            list.addFirst(1); ;
+        }
+        System.out.println("---".repeat(10));
+        System.out.print(list);
+        System.out.println();
+    }
+
     // main function
     public static void main(String[] args) {
+
+        // Test Case for Problem 3 :-
+        int[] arr = {7, 7, 8} ;
+        int[] arr2 = {7, 8, 9} ;
+        int[] arr3 = {9, 9, 9} ;
+        int[] arr4 = {1, 9, 9} ;
+        addOne(arr);
+        addOne(arr2);
+        addOne(arr3);
+        addOne(arr4);
 
         // Test Case for Problem 2 :-
 //        ArrayList<Integer> list = new ArrayList<>() ;
