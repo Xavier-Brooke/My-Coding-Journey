@@ -1,6 +1,7 @@
 package Concept;
 
 import java.util.ArrayList ;
+import java.util.Collections ;
 
 public class _07_arrayLists {
 
@@ -47,6 +48,51 @@ public class _07_arrayLists {
         return max ;
     }
 
+    /*
+    * Question 4 :-
+    * Container with max water problem
+    * Time Complexity :- O(n), Space Complexity :- O(1)*/
+    public static int container_with_most_water(ArrayList<Integer> heights) {
+        int maxWater = 0 ;
+        int left = 0 ;
+        int right = heights.size()-1 ;
+        while(left < right) {
+            int leftHeight = heights.get(left) ;
+            int rightHeight =  heights.get(right) ;
+            int waterLevel = Math.min(leftHeight, rightHeight) ;
+            int width = (right - left) ;
+            int currWater = waterLevel * width ;
+            maxWater = Math.max(currWater, maxWater) ;
+            if(leftHeight < rightHeight) {
+                left++ ;
+            } else {
+                right-- ;
+            }
+        }
+        return maxWater ;
+    }
+
+    /*
+    * Question 5 :-
+    * Pair Sum 1
+    * Time Complexity :- O(n), Space Complexity :- O(1)*/
+    public static boolean pairSum_1(ArrayList<Integer> list, int sum) {
+        int lp = 0 ;
+        int rp = list.size()-1 ;
+        while(lp < rp) {
+            int currSum = (list.get(lp) + list.get(rp)) ;
+            if(currSum == sum) {
+                return true ;
+            } else if(currSum < sum) {
+                lp++ ;
+            } else {
+                rp-- ;
+            }
+        }
+
+        return false ;
+    }
+
     /* multi dimensional ArrayList */
 
     /*
@@ -62,7 +108,6 @@ public class _07_arrayLists {
         }
         System.out.println();
     }
-
 
     // main function
     public static void main(String[] args) {
@@ -83,8 +128,20 @@ public class _07_arrayLists {
 
         /* 1D ArrayList */
         //
+
 //        ArrayList<Integer> list = new ArrayList<>() ;
 //        list.add(1); list.add(20) ; list.add(-3) ; list.add(4) ; list.add(-5) ;
+
+        // Test Case for Question 5 :-
+        ArrayList<Integer> list = new ArrayList<>() ;
+        Collections.addAll(list, 1, 2, 3, 4, 5, 6) ;
+        int target = 5 ;
+        System.out.println(pairSum_1(list, target));
+
+        // Test Case for Question 4 :-
+//        ArrayList<Integer> heights = new ArrayList<>() ;
+//        Collections.addAll(heights, 1, 8, 6, 2, 5, 4, 8, 3, 7) ;
+//        System.out.println(container_with_most_water(heights));
 
         // Test Case for Question 3 :-
 //        System.out.println(findMaximum(list));
