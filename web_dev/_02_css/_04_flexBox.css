@@ -14,7 +14,7 @@ h1 {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    align-items: end;
+    align-items: center;
 }
 
 /* #container div {
@@ -31,4 +31,29 @@ h1 {
     color: white;
     text-align: center;
     font-size: 0.8rem;
+}
+
+#id1 {
+    flex-grow: 1.5;
+}
+
+#id2 {
+    align-self: baseline;
+    flex-grow: 1;
+}
+
+#id3 {
+    align-self: flex-start;
+}
+
+#id4 {
+    align-self: flex-end;
+}
+
+#id5 {
+    align-self: center;
+}
+
+#id6 {
+    flex-basis: 300px;
 }
