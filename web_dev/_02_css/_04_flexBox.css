@@ -1,0 +1,34 @@
+h1 {
+    text-align: center;
+}
+
+#container {
+    height: 500px;
+    width: 80%;
+    background-color: azure;
+    margin: 10px auto;
+    border: 2px solid black;
+
+    /* flexBox property*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: end;
+}
+
+/* #container div {
+    height: 50px;
+    width: 50px;
+    color: white;
+    text-align: center;
+    font-size: 0.8rem;
+} */
+
+.flexItem {
+    height: 50px;
+    width: 50px;
+    color: white;
+    text-align: center;
+    font-size: 0.8rem;
+}
