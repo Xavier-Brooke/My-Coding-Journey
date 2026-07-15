@@ -86,18 +86,84 @@ public class _07_arrayLists {
         System.out.println();
     }
 
+    /*
+    * Problem 4 :-
+    * WAF to add two arrays where every element of the array is <= 9
+    * Time Complexity :- O(), Space Complexity :- O()*/
+    public static ArrayList<Integer> add_arrays(ArrayList<Integer> a, ArrayList<Integer> b) {
+
+        ArrayList<Integer> ans = new ArrayList<>() ;
+
+        int p = a.size()-1 ; // pointer for a
+        int q = b.size()-1 ; // pointer for b
+
+        // step 1 :- first we will simply calculate the sum of a and b
+        int curr = Math.min(a.size(), b.size()) ;
+        while(curr > 0) {
+            int sum = a.get(p) + b.get(q) ;
+            ans.addFirst(sum);
+            p-- ;
+            q-- ;
+            curr-- ;
+        }
+
+        // Step 2 :- now we will simply push element of a or b (if size is different)
+        while(p >= 0) {
+            ans.addFirst(a.get(p));
+            p-- ;
+        }
+        while(q >= 0) {
+            ans.addFirst(b.get(q));
+            q-- ;
+        }
+
+        // Step 3 :- Now we will make every element of ans in range of 0 to 9
+        int r = ans.size()-1 ;
+        while(r > 0) {
+            int currEle = ans.get(r) ;
+            if(currEle > 9) {
+                int ele = currEle%10 ;
+                ans.set(r, ele) ;
+                int prevEle = (ans.get(r-1)) ;
+                ans.set(r-1, prevEle+1) ;
+            }
+            r-- ;
+        }
+
+        if(ans.size() > 0) {
+            int firstEle = ans.getFirst() ;
+            if(firstEle > 9) {
+                ans.set(0, firstEle%10) ;
+                ans.addFirst(1);
+            }
+        }
+
+        return ans ;
+    }
+
     // main function
     public static void main(String[] args) {
 
+        // Test Case for Problem 4 :-
+        ArrayList<Integer> a = new ArrayList<>() ;
+        Collections.addAll(a, 9, 9, 9, 9, 9) ;
+
+        ArrayList<Integer> b = new ArrayList<>() ;
+        Collections.addAll(b, 9, 9, 9, 9, 9) ;
+
+        ArrayList<Integer> sum;
+        sum = add_arrays(a, b) ;
+        System.out.println(sum);
+
         // Test Case for Problem 3 :-
-        int[] arr = {7, 7, 8} ;
-        int[] arr2 = {7, 8, 9} ;
-        int[] arr3 = {9, 9, 9} ;
-        int[] arr4 = {1, 9, 9} ;
-        addOne(arr);
-        addOne(arr2);
-        addOne(arr3);
-        addOne(arr4);
+//        int[] arr = {7, 7, 8} ;
+//        int[] arr2 = {7, 8, 9} ;
+//        int[] arr3 = {9, 9, 9} ;
+//        int[] arr4 = {1, 9, 9} ;
+//        addOne(arr);
+//        addOne(arr2);
+//        addOne(arr3);
+//        addOne(arr4);
 
         // Test Case for Problem 2 :-
 //        ArrayList<Integer> list = new ArrayList<>() ;
