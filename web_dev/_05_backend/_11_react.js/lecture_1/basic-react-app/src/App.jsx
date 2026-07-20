@@ -1,7 +1,7 @@
-import './App.css'
+// import './App.css'
 import {Para} from './Util.jsx'
-// import Product from './Product.jsx';
-import ProductTab from './ProductTAb.jsx' ;
+import ProductTab from './ProductTab.jsx' ;
+import Activity from './activity.jsx' ;
 
 function Greet() {
   return <h1>Hello World</h1>
@@ -10,11 +10,10 @@ function Greet() {
 function App() {
   return (
     <>
-      {/* <Product/>
-      <Para/>
-      <Greet/>
-      <Title/> */}
-      <ProductTab></ProductTab>
+      {/* <ProductTab/> */}
+      <Activity user={"Xavier Brooke"} textColor={"yellow"}/>
+      <Activity user={"Adam"} textColor={"blue"}/>
+      <Activity user={"Catlyn"} textColor={"pink"}/>
     </>
   ) ;
 }

@@ -1,9 +1,10 @@
 .Product {
-    height: 100px;
+    height: 500px;
     width: 200px;
-    background-color: white;
+    background-color: rgb(156, 73, 73);
     margin: 20px;
     padding: 20px;
+    border: 2px solid black;
 }
 
 .Product h3 {
