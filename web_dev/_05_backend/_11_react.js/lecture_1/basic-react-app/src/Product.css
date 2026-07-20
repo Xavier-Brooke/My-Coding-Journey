@@ -1,0 +1,19 @@
+.Product {
+    height: 100px;
+    width: 200px;
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+}
+
+.Product h3 {
+    color: green;
+    border: 1px solid red;
+    background-color: pink;
+}
+
+.Product h4 {
+    color: blue;
+    border: 2px  solid black;
+    background-color: red;
+}
