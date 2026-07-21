@@ -2,6 +2,8 @@ import './App.css'
 import {Para} from './Util.jsx'
 // import ProductTab from './ProductTab.jsx' ;
 import ProductTab from './activity/producTab.jsx';
+import Button from './Button.jsx' ;
+import Form from './Form.jsx';
 
 function Greet() {
   return <h1>Hello World</h1>
@@ -10,8 +12,7 @@ function Greet() {
 function App() {
   return (
     <div className="container">
-      <h3>Blockbluster Deals on Computer Accessories | Shop Now</h3>
-      <ProductTab/>
+      <Form/>
     </div>
   ) ;
 }
