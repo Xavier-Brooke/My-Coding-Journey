@@ -1,7 +1,7 @@
-// import './App.css'
+import './App.css'
 import {Para} from './Util.jsx'
-import ProductTab from './ProductTab.jsx' ;
-import Activity from './activity.jsx' ;
+// import ProductTab from './ProductTab.jsx' ;
+import ProductTab from './activity/producTab.jsx';
 
 function Greet() {
   return <h1>Hello World</h1>
@@ -9,12 +9,10 @@ function Greet() {
 
 function App() {
   return (
-    <>
-      {/* <ProductTab/> */}
-      <Activity user={"Xavier Brooke"} textColor={"yellow"}/>
-      <Activity user={"Adam"} textColor={"blue"}/>
-      <Activity user={"Catlyn"} textColor={"pink"}/>
-    </>
+    <div className="container">
+      <h3>Blockbluster Deals on Computer Accessories | Shop Now</h3>
+      <ProductTab/>
+    </div>
   ) ;
 }
 
