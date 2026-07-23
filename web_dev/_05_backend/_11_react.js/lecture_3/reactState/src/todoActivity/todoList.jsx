@@ -2,12 +2,12 @@ import { useState } from "react" ;
 import { v4 as uuid } from 'uuid' ;
 
 function TodoList() {
-    let [tasks, setTask] = useState([{task : "Sample Task", id: uuid()}]) ;
+    let [tasks, setTask] = useState([{task : "Sample Task", id: uuid(), isDone: false}]) ;
     let [newTask, setNewTask] = useState("") ;
 
     function addTask(event) {
         setTask((prevValue) => {
-            return [...prevValue, {task: newTask, id: uuid()}]
+            return [...prevValue, {task: newTask, id: uuid(), isDone:false}]
         }) ;
         setNewTask("") ;
     }
@@ -63,6 +63,10 @@ function TodoList() {
         })
     }
 
+    function markDone(id) {
+        console.log(id) ;
+    }
+
     return (
         <div>
             <input placeholder="Enter your task here" value={newTask} onChange={updateTodoList}/>
@@ -71,7 +75,7 @@ function TodoList() {
             <br/><br/><br/>
             <hr></hr>
             <h3>Tasks to do</h3>
-            <ol>{tasks.map((ele) => {return <li key={ele.id}>{ele.task} <button onClick={() => deleteTask(ele.id)}>Delete</button> &emsp; <button onClick={() => upperCaseOne(ele.id)}>upperCase</button></li>
+            <ol>{tasks.map((ele) => {return <li key={ele.id}>{ele.task} <button onClick={() => deleteTask(ele.id)}>Delete</button> &emsp; <button onClick={() => upperCaseOne(ele.id)}>upperCase</button> &emsp; <button onClick={() => markDone(ele.id)}>markDone</button></li>
             })}<br/><button onClick={upperCaseAll}>upperCaseAll</button>&emsp;<button onClick={lowerCaseAll}>lowerCaseAll</button></ol>
         </div>
     )
