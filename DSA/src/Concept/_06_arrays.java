@@ -12,12 +12,9 @@ public class _06_arrays {
     }
 
      /*
-     Question 1 :-
-     WAF to find a given target in an array (Linear Search)
-                                                  ^
-                                                  |
-                                             Time Complexity :- O(n), Space Complexity :- O(1)
-    */
+     * Question 1 :-
+     * WAF to find a given target in an array (Linear Search)
+     * Time Complexity :- O(n), Space Complexity :- O(1)*/
     public static int linearSearch(int[] arr, int target) {
         for(int i = 0; i < arr.length; i++) {
             if(arr[i] == target) {
@@ -97,8 +94,9 @@ public class _06_arrays {
     * WAF to print pairs in an array
     * Time Complexity :- O(n^2), Space Complexity :- O(1)*/
     public static void printPairs(int[] arr) {
-        for(int i = 0; i < arr.length; i++) {
-            for(int j = (i+1); j < arr.length; j++) {
+        int n = arr.length ;
+        for(int i = 0; i < (n-1); i++) {
+            for(int j = (i+1); j < n; j++) {
                 System.out.print("(" + arr[i] + "," + arr[j] + "),");
             }
             System.out.println();
@@ -470,8 +468,8 @@ public class _06_arrays {
 //        printSubarray(arr);
 
         // Test Case for Question 6 :-
-//        int[] arr = {2, 4, 6, 8, 10} ;
-//        printPairs(arr);
+        int[] arr = {2, 4, 6, 8, 10} ;
+        printPairs(arr);
 
         // Test Case for Question 5 :-
 //        int[] arr = {234, 876, -76432, -43, 0, 876, 752, 658, 832, -436, -612, -723} ;
